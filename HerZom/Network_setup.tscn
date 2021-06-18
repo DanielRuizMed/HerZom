@@ -1,0 +1,198 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Scripts/Network_setup.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/UI.gd" type="Script" id=2]
+[ext_resource path="res://Fonts/Base_font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Tiles/estrella.png" type="Texture" id=4]
+[ext_resource path="res://Tiles/star.png" type="Texture" id=6]
+[ext_resource path="res://Fonts/Down Hill.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="StreamTexture" id=1]
+flags = 5
+load_path = "res://.import/unnamed.jpg-ca309f53b99615fa885467f8ae637786.stex"
+
+[sub_resource type="DynamicFont" id=2]
+size = 350
+font_data = ExtResource( 7 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 4 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Network_setup" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_right = 1916.0
+margin_bottom = 1081.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Fondo2" type="TextureRect" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -956.0
+margin_top = -538.5
+margin_right = 8601.0
+margin_bottom = 4826.5
+rect_scale = Vector2( 0.2, 0.2 )
+texture = SubResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 183.857
+margin_top = 203.573
+margin_right = 1693.86
+margin_bottom = 750.573
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.835294, 0.00784314, 0.00784314, 1 )
+custom_colors/font_outline_modulate = Color( 0.027451, 0.027451, 0.027451, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 17
+custom_constants/line_spacing = -9
+custom_constants/shadow_offset_y = 19
+custom_constants/shadow_as_outline = 6
+text = "HerZom
+"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Multiplayer_configure" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Create_server" type="Button" parent="Multiplayer_configure"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -482.776
+margin_top = 240.49
+margin_right = 20.2249
+margin_bottom = 333.49
+custom_fonts/font = ExtResource( 3 )
+text = "Crear juego"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Join_server" type="Button" parent="Multiplayer_configure"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 138.836
+margin_top = 232.119
+margin_right = 562.836
+margin_bottom = 329.119
+custom_fonts/font = ExtResource( 3 )
+text = "Buscar partida"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Username_text_edit" type="LineEdit" parent="Multiplayer_configure"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -383.875
+margin_top = 618.448
+margin_right = 461.125
+margin_bottom = 722.448
+custom_fonts/font = ExtResource( 3 )
+align = 1
+placeholder_text = "Elige tu nombre"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="talentos" type="TextureButton" parent="Multiplayer_configure"]
+margin_left = 1721.51
+margin_top = 30.204
+margin_right = 1864.51
+margin_bottom = 173.204
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Multiplayer_configure/talentos"]
+position = Vector2( 79.2852, 81.1732 )
+scale = Vector2( 2.88775, 2.35682 )
+frames = SubResource( 3 )
+frame = 1
+playing = true
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource( 2 )
+
+[node name="Start_game" type="Button" parent="UI"]
+margin_left = 27.0
+margin_top = 27.0
+margin_right = 391.0
+margin_bottom = 158.0
+custom_fonts/font = ExtResource( 3 )
+text = "Start Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Device_ip_address" type="Label" parent="UI"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -150.0
+margin_right = 0.00012207
+custom_fonts/font = ExtResource( 3 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Spawn_locations" type="Node" parent="."]
+
+[node name="1" type="Position2D" parent="Spawn_locations"]
+position = Vector2( 192, 192 )
+
+[node name="2" type="Position2D" parent="Spawn_locations"]
+position = Vector2( 1728, 192 )
+
+[node name="3" type="Position2D" parent="Spawn_locations"]
+position = Vector2( 960, 192 )
+
+[node name="4" type="Position2D" parent="Spawn_locations"]
+position = Vector2( 192, 896 )
+
+[node name="5" type="Position2D" parent="Spawn_locations"]
+position = Vector2( 960, 896 )
+
+[node name="6" type="Position2D" parent="Spawn_locations"]
+position = Vector2( 1728, 896 )
+
+[connection signal="pressed" from="Multiplayer_configure/Create_server" to="." method="_on_Create_server_pressed"]
+[connection signal="pressed" from="Multiplayer_configure/Join_server" to="." method="_on_Join_server_pressed"]
+[connection signal="pressed" from="Multiplayer_configure/talentos" to="." method="_on_talentos_pressed"]
+[connection signal="pressed" from="UI/Start_game" to="." method="_on_Start_game_pressed"]
